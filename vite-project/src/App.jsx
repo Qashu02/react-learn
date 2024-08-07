@@ -1,12 +1,4 @@
-// we cannot return multiple elements through react because when compiler xompile it. it changed to an object so js function cannot be return the multiple object at the same time  so we make a div first to handle it 
-// but in our Documnet the new extra node added that we dosesnot need 
-
-// we use fragments to prevent from extra nodes fragment can also be declare with <> </>.
-// it dosesnot added extra node in our DOM import { Fragment } from "react";
-
-//  we can also return the other elements by using array with passing its key like return [ Card key="1",....]
-
-// import { Fragment } from "react";
+//  we can access javascript code in html by using dynamic value .
 
 
 export const App =() =>{
@@ -15,56 +7,36 @@ export const App =() =>{
 
     <Card/>
     <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
+   
     </>
     
     
     );
-    // return( <React.Fragment>
-{/* 
-
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      </React.Fragment>
-      
-      
-      );
-return( <Fragment>
-
-
-<Card/>
-<Card/>
-<Card/>
-<Card/>  // return( <React.Fragment>
-<Card/>
-<Card/>
-<Card/>
-<Card/>
-</Fragment>
-
-
-); */}
+  
   };
 
  const Card = ()=>{
+
+  const name ='dog';
+  const img='dogs.jpeg'
+
+  function eating(){
+    const eat='food ';
+    return eat
+   }
+
     return( <div>
 
     
     <div>
-      <img src="dogs.jpeg" alt=""/>
+{/* Dynamic value in jsx */}
+      <img src={img} alt=""/>
   </div>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, reiciendis.</p>
-      <button>Submit</button>
+  {/* dynamic text in jsx */}
+    <p>{name}</p>
+    {/* Dynamic Expression in jsx*/}
+    <p>age={12+4}</p>
+  {/* Dynamic function in jsx */}
+    <p>{eating()}</p>
   </div> );
   };
